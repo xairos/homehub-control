@@ -1,0 +1,49 @@
+{
+  "request": {
+    "id": 0,
+    "session-id": "0",
+    "priority": true,
+    "actions": [
+      {
+        "id": 0,
+        "method": "logIn",
+        "parameters": {
+          "user": "admin",
+          "persistent": "true",
+          "session-options": {
+            "nss": [
+              {
+                "name": "gtw",
+                "uri": "http://sagemcom.com/gateway-data"
+              }
+            ],
+            "language": "ident",
+            "context-flags": {
+              "get-content-name": true,
+              "local-time": true,
+              "no-default": false
+            },
+            "capability-depth": 2,
+            "capability-flags": {
+              "name": true,
+              "default-value": false,
+              "restriction": true,
+              "description": false
+            },
+            "time-format": "ISO_8601",
+            "compatibility-flags": {
+              "flags": true,
+              "default-value": true,
+              "type": true
+            },
+            "depth": 2,
+            "write-only-string": "_XMO_WRITE_ONLY_",
+            "undefined-write-only-string": "_XMO_UNDEFINED_WRITE_ONLY_"
+          }
+        }
+      }
+    ],
+    "cnonce": 0,
+    "auth-key": ""
+  }
+}
