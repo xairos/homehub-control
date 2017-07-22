@@ -1,0 +1,27 @@
+# Home Hub Control
+
+## Rundown
+This project gives you an abstraction layer to communicate with your Bell Home Hub 2000 router. You get nice session management functions, like `session.login(user, pass)` and `session.exec_action(someaction)`.
+
+### How
+First, grab https://www.python.org/[Python 2.7] and http://docs.python-requests.org/en/master/[Requests]. Then, try something simple:
+
+[source,python]
+----
+from bell_protocol import Session,ActionPayload
+
+s = Session("192.168.2.1")
+s.login("admin", "password")
+try:
+    # Restart my router
+    action = ActionPayload("reboot", xpath = "Device")
+    s.exec_action(action)
+finally:
+    s.logout()
+----
+
+### What
+This works on my Bell Home Hub 2000 router (_Sagemcom F@st 5250_). That's the only guarantee I can give, unfortunately! Since the API used is undocumented, this is unlikely to work on other Home Hub series routers. Or any other routers, for that matter.
+
+### Why
+I initially wrote this wrapper to build a backend for an alternative device-banning interface. I found myself using it for the ocassional router-based project (programmatic restarting, etc), so maybe it will help you build yours.
